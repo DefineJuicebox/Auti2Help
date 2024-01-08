@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .ie-panel {
+      display: none;
+      background: #212121;
+      padding: 10px 0;
+      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+      clear: both;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    html.ie-10 .ie-panel,
+    html.lt-ie-10 .ie-panel {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="preloader">
+    <div class="preloader-body">
+      <div class="cssload-container">
+        <div class="cssload-speeding-wheel"></div>
+      </div>
+      <p>Loading...</p>
+    </div>
+  </div>
+  <div class="page">
+    <section class="section main-section parallax-scene-js pt-5"
+      style="background:url('images/bg-1-1700x803.jpg') no-repeat center center; background-size:cover;">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                <form>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="name" class="form-control form-control-lg" placeholder="Full Name" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="email" class="form-control form-control-lg" placeholder="Email" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="skills" class="form-control form-control-lg" placeholder="Skills" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="rptpassword" class="form-control form-control-lg"
+                      placeholder="Repeat Password" />
+                  </div>
+
+
+                  <div class="d-flex justify-content-center mb-1">
+                    <button id="reg" type="button"
+                      class="button-width-190 button-primary button-circle button-lg button offset-top-15">Register</button>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a class="button-width-190 button-primary button-circle button-lg button offset-top-15"
+                      href="index.html">Cancel</a>
+                  </div>
+
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="login.html"
+                      class="fw-bold text-body text-primary"><u>Login here</u></a></p>
+
+                  <div class="d-block text-center pt-3">
+                    <button type="button" class="btn btn-outline-success" id="googlesignin">
+                      <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+                        type="image/png align-center" width="30" height="30" alt="Google sign-in">Sign up with Google
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="decorate-layer">
+        <div class="layer-1">
+          <div class="layer" data-depth=".20"><img src="images/parallax-item-1-563x532.png" alt="" width="563"
+              height="266" />
+          </div>
+        </div>
+        <div class="layer-2">
+          <div class="layer" data-depth=".30"><img src="images/parallax-item-2-276x343.png" alt="" width="276"
+              height="171" />
+          </div>
+        </div>
+        <div class="layer-3">
+          <div class="layer" data-depth=".40"><img src="images/parallax-item-3-153x144.png" alt="" width="153"
+              height="72" />
+          </div>
+        </div>
+        <div class="layer-4">
+          <div class="layer" data-depth=".20"><img src="images/parallax-item-4-69x74.png" alt="" width="69"
+              height="37" />
+          </div>
+        </div>
+        <div class="layer-5">
+          <div class="layer" data-depth=".40"><img src="images/parallax-item-5-72x75.png" alt="" width="72"
+              height="37" />
+          </div>
+        </div>
+        <div class="layer-6">
+          <div class="layer" data-depth=".30"><img src="images/parallax-item-6-45x54.png" alt="" width="45"
+              height="27" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="module" src="js/registerFirebase.js"></script>
+    <script src="js/form-validation.js"></script>
+
+    <!--  i already moved everything into firebaseLogin script.js 
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import {getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import {getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDPQugVWKT0EIkDrgOGEPVXhkWMotTwi40",
+      authDomain: "kitahackhathon.firebaseapp.com",
+      databaseURL: "https://kitahackhathon-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "kitahackhathon",
+      storageBucket: "kitahackhathon.appspot.com",
+      messagingSenderId: "351449291643",
+      appId: "1:351449291643:web:c5ef27af759b6add8afbde",
+      measurementId: "G-G0Z85WJEXN"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+
+    //Google Sign In
+    const signInButton = document.getElementById("googlesignin");
+
+    const userSignIn = async () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          const user = result.user
+          console.log(user);
+        }).catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        })
+    }
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        //alert("User signed in");
+        //window.location.href = 'loggeduser.html';
+      } else {
+
+      }
+    })
+
+    signInButton.addEventListener('click', userSignIn);
+
+    // Normal Registration
+    reg.addEventListener('click', (e) => {
+      var email =
+        document.getElementById('email').value;
+      var name = document.getElementById('name').value;
+      var password =
+        document.getElementById('password').value;
+      var skills =
+        document.getElementById('skills').value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+
+          set(ref(database, 'users/' + user.uid), {
+            name: name,
+            email: email,
+            skills: skills
+          })
+          alert("user signed in!");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
+          alert(errorMessage);
+        });
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+  </script> -->
+  </div>
+</body>
+
+</html>
